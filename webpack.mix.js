@@ -12,7 +12,8 @@ var tailwindcss = require('tailwindcss');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix.copyDirectory('content/music-articles/img', 'public/articles/img') // copy music articles assets
+   .js('resources/assets/js/app.js', 'public/js')
    .postCss('resources/assets/css/main.css', 'public/css', [
         tailwindcss('tailwind.js'),
    ]);
