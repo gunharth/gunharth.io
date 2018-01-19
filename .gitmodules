@@ -1,0 +1,3 @@
+[submodule "content/music-articles"]
+	path = content/music-articles
+	url = git@github.com:gunharth/music-articles.git
