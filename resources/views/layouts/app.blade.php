@@ -12,9 +12,9 @@
 
         <title>{{ isset($title) ? ($title . ' — Gunharth Randolf') : 'Gunharth Randolf' }}</title>
 
-        @include('feed::links')
+        <!-- @include('feed::links') -->
 
-        @include('layouts.partials.favicons')
+        <!-- @include('layouts.partials.favicons') -->
 
         <link rel="preconnect" href="https://fonts.gstatic.com/">
 
@@ -27,7 +27,7 @@
     </head>
     <body>
         @if($header ?? true)
-            @include('layouts.partials.header')
+            <!-- @include('layouts.partials.header') -->
         @endif
 
         {{ $slot }}

@@ -1,5 +1,4 @@
-<div class="little-seperator"></div>
-<footer class="footer">
+<footer class="max-w-lg mx-auto mt-12 py-4">
     <div>
         © {{ carbon()->format('Y') }}
         <a href="{{ url('about') }}">Gunharth Randolf</a>

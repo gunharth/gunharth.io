@@ -71,6 +71,6 @@ class Articles extends Provider
                     'summary' => markdown($document->summary ?? $document->body()),
                 ];
             })
-            ->sortBy('categoryID')->sortBy('articleID')->groupBy('category');
+            ->sortBy('categoryID')->sortBy('articleID');
     }
 }

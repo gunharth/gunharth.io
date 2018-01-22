@@ -1,52 +1,31 @@
 @component('layouts.app', [
-    'title' => 'Blog',
+    'title' => 'Music Articles',
 ])
-    <div class="container">
+    <div class="max-w-lg mx-auto mt-12 py-4">
         <header class="">
             <section class="">
                 <h1 class="h1">
-                    Articles
+                    Music Articles
                 </h1>
             </section>
-            <ul class="">
-                <li class="">
-                    <a href="{{ url('blogroll') }}">
-                        <span class="icon -s" title="Blogroll">
-                            {{ svg('star') }}
-                        </span>
-                    </a>
-                </li>
-                <li class="">
-                    <a href="{{ url('feed') }}" data-turbolinks="false">
-                        <span class="icon -s" title="RSS">
-                            {{ svg('rss') }}
-                        </span>
-                    </a>
-                </li>
-            </ul>
         </header>
     </div>
-    <div class="container">
+    <div class="max-w-lg mx-auto mt-12 py-4">
         @foreach($articles as $category => $articles)
-        <h2>{{ $category }}</h2>
+        <h2 class="pt-4">{{ $category }}</h2>
         @foreach($articles as $article)
-            <article class="">
-                <h3 class="">
+            <article class="py-3">
+                <h3>
                     <a href="{{ $article->url }}" class="">
                         {{ $article->title }}
                     </a>
                 </h3>
-                <section class="post-contents">
-
+                <section class="py-2">
+                    {!! $article->summary !!}
                 </section>
-                <a href="{{ $article->read_more_url }}" target="sebdd" class="">
-                    {{ $article->read_more_text ?? 'Read more' }}
-                </a>
             </article>
         @endforeach
         @endforeach
     </div>
-    <div class="container">
         @include('partials.footer')
-    </div>
 @endcomponent

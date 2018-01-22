@@ -9,7 +9,7 @@ class ArticlesController
     public function index(Articles $articles)
     {
         return view('articles.index', [
-            'articles' => $articles->all(),
+            'articles' => $articles->all()->groupBy('category'),
         ]);
     }
 
