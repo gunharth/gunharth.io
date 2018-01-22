@@ -12,15 +12,15 @@
     </div>
     <div class="max-w-lg mx-auto mt-12 py-4">
         @foreach($articles as $category => $articles)
-        <h2 class="pt-4">{{ $category }}</h2>
+        <h2>{{ $category }}</h2>
         @foreach($articles as $article)
-            <article class="py-3">
+            <article >
                 <h3>
                     <a href="{{ $article->url }}" class="">
                         {{ $article->title }}
                     </a>
                 </h3>
-                <section class="py-2">
+                <section>
                     {!! $article->summary !!}
                 </section>
             </article>

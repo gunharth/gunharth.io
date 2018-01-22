@@ -5,6 +5,7 @@
  * You can see the styles here:
  * https://github.com/tailwindcss/tailwindcss/blob/master/css/preflight.css
  */
+
 @tailwind preflight;
 
 /**
@@ -23,10 +24,13 @@
  * @import "components/forms";
  */
 
+@import "components/base";
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
  */
+
 @tailwind utilities;
 
 /**
