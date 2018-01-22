@@ -1,16 +1,21 @@
+body {
+    @apply text-grey-darkest font-sans
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h5 {
-    @apply .text-grey-darkest .font-sans pt-6 pb-4;
+    @apply font-serif pt-6 pb-4;
 }
 
-p, li {
-    @apply .text-grey-darkest .leading-normal .text-xl .font-serif .py-2;
+p,
+li {
+    @apply .leading-normal .text-xl .py-2;
 }
 
 pre {
-    @apply .text-grey-darkest .py-6;
+    @apply .py-6;
 }

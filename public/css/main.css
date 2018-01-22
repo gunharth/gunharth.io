@@ -516,30 +516,31 @@ button,
  * @import "components/buttons";
  * @import "components/forms";
  */
+body {
+  color: #3d4852;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h5 {
-  color: #3d4852;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
 
 p,
 li {
-  color: #3d4852;
   line-height: 1.5;
   font-size: 1.25rem;
-  font-family: Constantia, Lucida Bright, Lucidabright, Lucida Serif, Lucida, DejaVu Serif, Bitstream Vera Serif, Liberation Serif, Georgia, serif;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 pre {
-  color: #3d4852;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
