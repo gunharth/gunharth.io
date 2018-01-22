@@ -2,21 +2,21 @@
     'title' => 'Blog',
 ])
     <div class="container">
-        <header class="blog__header">
-            <section class="blog__header__h1">
+        <header class="">
+            <section class="">
                 <h1 class="h1">
                     Articles
                 </h1>
             </section>
-            <ul class="blog__header__nav">
-                <li class="blog__header__nav__item">
+            <ul class="">
+                <li class="">
                     <a href="{{ url('blogroll') }}">
                         <span class="icon -s" title="Blogroll">
                             {{ svg('star') }}
                         </span>
                     </a>
                 </li>
-                <li class="blog__header__nav__item">
+                <li class="">
                     <a href="{{ url('feed') }}" data-turbolinks="false">
                         <span class="icon -s" title="RSS">
                             {{ svg('rss') }}
@@ -26,28 +26,27 @@
             </ul>
         </header>
     </div>
-    <div class="container -pull-out">
-        @foreach($paginator as $article)
-            <article class="blog__excerpt">
-                <a href="{{ $article->url }}" class="blog__excerpt__date">
-
-                </a>
-                <h2 class="blog__excerpt__title">
-                    <a href="{{ $article->url }}" class="blog__excerpt__title__link">
+    <div class="container">
+        @foreach($articles as $category => $articles)
+        <h2>{{ $category }}</h2>
+        @foreach($articles as $article)
+            <article class="">
+                <h3 class="">
+                    <a href="{{ $article->url }}" class="">
                         {{ $article->title }}
                     </a>
-                </h2>
+                </h3>
                 <section class="post-contents">
-                    {!! $article->summary !!}
+
                 </section>
-                <a href="{{ $article->read_more_url }}" target="sebdd" class="blog__excerpt__readmore">
+                <a href="{{ $article->read_more_url }}" target="sebdd" class="">
                     {{ $article->read_more_text ?? 'Read more' }}
                 </a>
             </article>
         @endforeach
+        @endforeach
     </div>
     <div class="container">
-        @include('posts.partials.paginator')
         @include('partials.footer')
     </div>
 @endcomponent

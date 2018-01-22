@@ -16,7 +16,18 @@ mix.copyDirectory('content/music-articles/img', 'public/articles/img') // copy m
    .js('resources/assets/js/app.js', 'public/js')
    .postCss('resources/assets/css/main.css', 'public/css', [
         tailwindcss('tailwind.js'),
-   ]);
+   ])
+    .browserSync({
+        // for localhost
+        // port: 8000,
+        // server: { baseDir: 'build_' + env },
+        // proxy: null,
+        // for valet
+        proxy: 'http://markdown-blog.test',
+        // files: [
+        //     'build_' + env + '/**/*'
+        // ]
+    })
 
 // If you want to use LESS for your preprocessing
 // mix.less('resources/assets/less/main.less', 'public/css')

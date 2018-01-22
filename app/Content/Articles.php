@@ -14,13 +14,6 @@ class Articles extends Provider
         });
     }
 
-    public function paginate($perPage = 15, $pageName = 'page', $page = null)
-    {
-        return $this->cache('articles.paginate.'.request('page', 1), function () use ($perPage, $pageName, $page) {
-            return $this->all()->simplePaginate($perPage, $pageName, $page);
-        });
-    }
-
     public function find($slug)
     {
         return $this->all()->first(function ($article) use ($slug) {
@@ -67,6 +60,9 @@ class Articles extends Provider
                     'url' => route('articles.show', [$slug]),
                     'title' => $document->title,
                     'subtitle' => $document->subtitle,
+                    'category' => $document->category,
+                    'categoryID' => $document->categoryID,
+                    'articleID' => $document->articleID,
                     'original_publication_name' => $document->original_publication_name,
                     'original_publication_url' => $document->original_publication_url,
                     'read_more_text' => $document->read_more_text,
@@ -75,6 +71,6 @@ class Articles extends Provider
                     'summary' => markdown($document->summary ?? $document->body()),
                 ];
             })
-            ->sortByDesc('slug');
+            ->sortBy('categoryID')->sortBy('articleID')->groupBy('category');
     }
 }

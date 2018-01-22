@@ -9,7 +9,7 @@ class ArticlesController
     public function index(Articles $articles)
     {
         return view('articles.index', [
-            'paginator' => $articles->paginate(20),
+            'articles' => $articles->all(),
         ]);
     }
 
