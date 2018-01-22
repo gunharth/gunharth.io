@@ -528,7 +528,8 @@ h5 {
   padding-bottom: 1rem;
 }
 
-p {
+p,
+li {
   color: #3d4852;
   line-height: 1.5;
   font-size: 1.25rem;
