@@ -545,6 +545,11 @@ pre {
   padding-bottom: 1.5rem;
 }
 
+ul:first-of-type li {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.

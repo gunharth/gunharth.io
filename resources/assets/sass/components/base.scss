@@ -19,3 +19,7 @@ li {
 pre {
     @apply .py-6;
 }
+
+ul:first-of-type li {
+    @apply py-0;
+}

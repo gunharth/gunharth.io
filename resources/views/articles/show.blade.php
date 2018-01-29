@@ -17,5 +17,6 @@
                     {{ $article->read_more_text }}
                 </a>
             @endif
+        </section>
     </article>
 @endcomponent
