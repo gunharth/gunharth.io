@@ -20,6 +20,14 @@ pre {
     @apply .py-6;
 }
 
+ul {
+    @apply pb-4;
+}
+
 ul:first-of-type li {
+    @apply py-0;
+}
+
+ul.articles li {
     @apply py-0;
 }

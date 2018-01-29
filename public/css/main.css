@@ -545,7 +545,16 @@ pre {
   padding-bottom: 1.5rem;
 }
 
+ul {
+  padding-bottom: 1rem;
+}
+
 ul:first-of-type li {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+ul.articles li {
   padding-top: 0;
   padding-bottom: 0;
 }
