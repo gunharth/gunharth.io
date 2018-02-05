@@ -1,5 +1,6 @@
 let mix = require('laravel-mix');
 var tailwindcss = require('tailwindcss');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /*
  |--------------------------------------------------------------------------
@@ -25,3 +26,9 @@ mix.copyDirectory('content/music-articles/img', 'public/img') // copy music arti
     .browserSync({
         proxy: 'http://markdown-blog.test',
     })
+
+mix.webpackConfig({
+    plugins: [
+        new CleanWebpackPlugin(['./public/img', './public/audio'])
+    ]
+});

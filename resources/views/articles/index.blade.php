@@ -5,7 +5,7 @@
         <header class="">
             <section class="">
                 <h1 class="h1">
-                    Music Articles
+                    Music Theory Articles
                 </h1>
             </section>
         </header>
