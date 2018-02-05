@@ -27,6 +27,10 @@ mix.copyDirectory('content/music-articles/img', 'public/img') // copy music arti
         proxy: 'http://markdown-blog.test',
     })
 
+if (mix.inProduction()) {
+    mix.version();
+}
+
 mix.webpackConfig({
     plugins: [
         new CleanWebpackPlugin(['./public/img', './public/audio'])
