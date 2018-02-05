@@ -12,9 +12,10 @@ var tailwindcss = require('tailwindcss');
  |
  */
 
-mix.copyDirectory('content/music-articles/img', 'public/articles/img') // copy music articles assets
-   .copyDirectory('content/music-articles/audio', 'public/articles/audio') // copy music articles assets
-   .copyDirectory('content/music-articles/pdf', 'public/articles/pdf') // copy music articles assets
+mix.copyDirectory('content/music-articles/img', 'public/img') // copy music articles assets
+   .copyDirectory('content/music-articles/audio', 'public/audio') // copy music articles assets
+   .copyDirectory('content/music-articles/pdf', 'public/pdf') // copy music articles assets
+   .copyDirectory('content/posts/img', 'public/img') // copy posts articles assets
    .js('resources/assets/js/app.js', 'public/js')
    .sass('resources/assets/sass/main.scss', 'public/css')
    .options({
