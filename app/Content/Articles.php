@@ -69,6 +69,8 @@ class Articles extends Provider
                     'read_more_url' => $document->read_more_url,
                     'contents' => markdown($document->body()),
                     'summary' => markdown($document->summary ?? $document->body()),
+                    'preview_image' => $document->preview_image ? '/' . $document->preview_image : '/images/gr_logo.jpg',
+
                 ];
             })
             ->sortBy('categoryID')->sortBy('articleID');

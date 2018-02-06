@@ -1,0 +1,1 @@
+<a class="back_to_top" title="Back to top">&uarr;</a>
