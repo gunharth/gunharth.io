@@ -23,8 +23,11 @@ Route::get('/blogroll', 'BlogrollController@index')->name('blogroll');
 
 Route::get('/posts', 'PostsController@index')->name('posts.index');
 Route::get('/posts/page/{page}', 'PostsController@page');
-Route::get('/posts/{year}/{slug}', 'PostsController@show')->name('posts.show')->where('slug', '(.*)');
+// Route::get('/posts/{year}/{slug}', 'PostsController@show')->name('posts.show')->where('slug', '(.*)');
+
 
 Route::get('/music-articles', 'ArticlesController@index')->name('articles.index');
-Route::get('/posts/page/{page}', 'PostsController@page');
+// Route::get('/posts/page/{page}', 'PostsController@page');
 Route::get('/music-articles/{slug}', 'ArticlesController@show')->name('articles.show')->where('slug', '(.*)');
+
+Route::get('/{slug}', 'PostsController@show')->name('posts.show')->where('slug', '(.*)');

@@ -1,5 +1,5 @@
-let mix = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 /*

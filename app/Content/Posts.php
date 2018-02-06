@@ -21,10 +21,25 @@ class Posts extends Provider
         });
     }
 
-    public function find($year, $slug)
+    // public function find($year, $slug)
+    // {
+    //     return $this->all()->first(function ($post) use ($year, $slug) {
+    //         return $post->date->year == $year && $post->slug == $slug;
+    //     }, function () {
+    //         abort(404);
+    //     });
+    // }
+
+    public function find($slug)
     {
-        return $this->all()->first(function ($post) use ($year, $slug) {
-            return $post->date->year == $year && $post->slug == $slug;
+        // return $this->all()->first(function ($post) use ($year, $slug) {
+        //     return $post->date->year == $year && $post->slug == $slug;
+        // }, function () {
+        //     abort(404);
+        // });
+
+        return $this->all()->first(function ($post) use ($slug) {
+            return $post->slug == $slug;
         }, function () {
             abort(404);
         });
@@ -65,7 +80,8 @@ class Posts extends Provider
                     'path' => $path,
                     'date' => $date,
                     'slug' => $slug,
-                    'url' => route('posts.show', [$date->format('Y'), $slug]),
+                    // 'url' => route('posts.show', [$date->format('Y'), $slug]),
+                    'url' => route('posts.show', [$slug]),
                     'title' => $document->title,
                     'subtitle' => $document->subtitle,
                     'original_publication_name' => $document->original_publication_name,

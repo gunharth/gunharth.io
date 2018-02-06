@@ -27,7 +27,7 @@
     </head>
     <body>
         @if($header ?? true)
-            <!-- @include('layouts.partials.header') -->
+            @include('layouts.partials.header')
         @endif
 
         {{ $slot }}
