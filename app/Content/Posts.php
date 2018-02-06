@@ -9,8 +9,12 @@ class Posts extends Provider
 {
     public function all()
     {
-        return $this->cache('posts.all', function () {
+        $posts = $this->cache('posts.all', function () {
             return $this->gather();
+        });
+        return $posts->each(function ($post) {
+            $date = Carbon::parse($post->date);
+            $post->dateShort = $date->format('F Y');
         });
     }
 
@@ -90,6 +94,8 @@ class Posts extends Provider
                     'read_more_url' => $document->read_more_url,
                     'contents' => markdown($document->body()),
                     'summary' => markdown($document->summary ?? $document->body()),
+                    'summary_short' => mb_strimwidth($document->summary ?? $document->body(), 0, 140, "..."),
+                    'preview_image' => $document->preview_image ? '/' . $document->preview_image : '/images/gr_logo.jpg',
                 ];
             })
             ->sortByDesc('date');

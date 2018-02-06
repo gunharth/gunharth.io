@@ -7,27 +7,19 @@ h2,
 h3,
 h4,
 h5,
-h5 {
-    @apply font-serif pt-6 pb-4;
+h6 {
+    @apply text-grey-darkest mt-12 mb-6 font-sans;
 }
 
 p,
 li {
-    @apply .leading-normal .text-xl .py-2;
+    @apply text-grey-darkest font-serif leading-normal text-xl py-2;
 }
 
 pre {
-    @apply .py-6;
+    @apply py-6;
 }
 
-ul {
-    @apply pb-4;
-}
-
-ul:first-of-type li {
-    @apply py-0;
-}
-
-ul.articles li {
-    @apply py-0;
+a {
+    @apply text-blue-light;
 }

@@ -1,39 +1,40 @@
-@component('layouts.app')
-    <div class="container">
-        <h1 class="h1 h-margin-bottom">
-            Gunharth Randolf
-        </h1>
-        <section class="textblock h-margin-bottom">
-            <p>
-                I'm a web developer from Ghent, working at <a href="https://spatie.be" target="sebdd" class="h-link-invisible">Spatie</a> in Antwerp. <br>
-                I build things with PHP, JavaScript, and CSS.
-            </p>
-        </section>
-        <section class="h-double-margin-bottom">
-            @include('partials.social')
-        </section>
-        <section class="post-list">
-            <h2 class="post-list__title">Articles</h2>
-            @foreach($posts as $year => $postsInYear)
-                <section class="list-group">
-                    <h2 class="list-group__title">
-                        {{ $year }}
-                    </h2>
-                    <ul>
-                        @foreach($postsInYear as $post)
-                            <li class="list-group__item">
-                                <a class="list-group__link" href="{{ $post->url }}">
-                                    {{ $post->title }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </section>
-            @endforeach
-            {{--<a href="{{ url('posts') }}" class="post-list__more">
-                Psst! There's more on the blog!
-            </a>--}}
-        </section>
-        @include('partials.footer')
-    </div>
-@endcomponent
+@extends('layouts.home')
+
+@section('meta')
+    <meta property="og:url"                content="https://christoph-rumpel.com" />
+    <meta property="og:type"               content="article" />
+    <meta property="og:title"              content="Hi I'm Christoph, a web developer from Austria" />
+    <meta property="og:description"        content="This is my personal blog where I write about PHP, Laravel, Git and Chatbots. I also talk about these topics. Checkout my site to find out more." />
+    <meta property="og:image"              content="{{ asset('/images/cr_image_v3.jpg') }}" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@christophrumpel" />
+    <meta name="twitter:title" content="Hi I'm Christoph, a web developer from Austria" />
+    <meta name="twitter:description" content="This is my personal blog where I write about PHP, Laravel, Git and Chatbots. I also talk about these topics. Checkout my site to find out more." />
+    <meta name="twitter:image" content="{{ asset('/images/cr_image_v3.jpg') }}" />
+@endsection
+
+@section('content')
+
+    <ul class="flex flex-col p-0 mt-0 mb-0 sm:justify-center w-full white flex-grow">
+        @foreach($posts as $post)
+            <li class="mb-4 w-full list-reset">
+                <time class="mb-0 text-grey-darkest font-bold uppercase text-sm font-sans">{{ $post->dateShort }} |
+                    <span
+                            class="text-orange">Category</span>
+                </time>
+
+
+                    <a class="no-underline" href="{{ $post->url }}">
+                        <h2 class="mt-0 mb-2 text-grey-darkest text-lg lg:text-xl">{{ $post->title }}</h2>
+                    </a>
+                    <p class="blogsummary hidden  text-base md:block">{!! $post->summary_short !!}</p>
+                    <a class="text-blue-light text-sm" href="{{ $post->url }}">Read more</a>
+
+            </li>
+        @endforeach
+    </ul>
+
+
+
+@endsection

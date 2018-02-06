@@ -1,16 +1,16 @@
-@component('layouts.app', [
-    'title' => 'Music Articles',
-])
-    <div class="max-w-lg mx-auto mt-12 py-4">
-        <header class="">
-            <section class="">
-                <h1 class="h1">
-                    Music Theory Articles
-                </h1>
-            </section>
-        </header>
-    </div>
-    <div class="max-w-lg mx-auto mt-12 py-4">
+@extends('layouts.post')
+
+@section('meta')
+    <meta property="og:url" content="{{ Request::url() }}"/>
+
+@endsection
+
+
+
+@section('content')
+
+    <div class="max-w-lg mx-auto">
+        <h1 class="mt-2 mb-8 text-grey-darkest text-4xl">Music Theory Articles</h1>
         @foreach($articles as $category => $articles)
         <h2>{{ $category }}</h2>
 
@@ -30,5 +30,6 @@
 </ul>
         @endforeach
     </div>
-        @include('partials.footer')
-@endcomponent
+
+
+@endsection

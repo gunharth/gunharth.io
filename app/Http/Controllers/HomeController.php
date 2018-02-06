@@ -9,9 +9,11 @@ class HomeController
 {
     public function index(Posts $posts)
     {
-        $posts = $posts->all()->groupBy(function ($post) {
-            return $post->date->format('Y');
-        });
+        // $posts = $posts->all()->groupBy(function ($post) {
+        //     return $post->date->format('Y');
+        // });
+
+        $posts = $posts->all();
 
         return view('home.index', [
             'posts' => $posts,
