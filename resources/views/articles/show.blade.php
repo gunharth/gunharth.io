@@ -1,4 +1,4 @@
-@extends('layouts.post')
+@extends('layouts.master')
 
 @section('meta')
     <meta property="og:url" content="{{ $article->url }}"/>

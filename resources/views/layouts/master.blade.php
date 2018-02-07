@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        @include('layouts.partials.head')
-    </head>
-    <body>
-        @if($header ?? true)
-            @include('partials.header')
-        @endif
+<head>
+    @include('layouts.partials.head')
+    @yield('meta')
+</head>
+<body class="font-sans">
 
-        {{ $slot }}
+<div class="flex flex-row justify-center w-screen">
+    <div class="bg-cover relative overflow-hidden w-100 sm:h-full flex-col flex flex-row m-8">
+        <header class="flex justify-between items-center mt-8 mb-12">
+            @include('partials.logo')
+            @include('partials.nav')
+        </header>
+        @yield('content')
 
-        @if(app()->environment('production'))
-            @include('partials.analytics')
-        @endif
-    </body>
+        @include('partials.footer')
+    </div>
+</div>
+
+@if(app()->environment('production'))
+    @include('layouts.partials.analytics')
+@endif
+</body>
 </html>
