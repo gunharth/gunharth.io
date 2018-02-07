@@ -25,6 +25,13 @@ mix.copyDirectory('content/music-articles/img', 'public/img') // copy music arti
    })
     .browserSync({
         proxy: 'http://markdown-blog.test',
+        files: [
+            'app/**/*.php',
+            'resources/views/**/*.php',
+            'public/js/**/*.js',
+            'public/css/**/*.css',
+            'content/**/*.md'
+        ]
     })
 
 if (mix.inProduction()) {
@@ -33,7 +40,7 @@ if (mix.inProduction()) {
 
 mix.webpackConfig({
     plugins: [
-        new CleanWebpackPlugin(['./public/img', './public/audio'])
+        new CleanWebpackPlugin(['./public/img', './public/audio', './public/pdf'])
     ]
 });
 
