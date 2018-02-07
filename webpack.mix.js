@@ -4,6 +4,8 @@ const glob = require("glob-all");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
+const purgecssWhitelist = ['back_to_top-show'];
+
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
 // class names.
 //
@@ -48,7 +50,7 @@ if (mix.inProduction()) {
     mix.webpackConfig({
         plugins: [
             new PurgecssPlugin({
-
+                whitelist: purgecssWhitelist,
                 // Specify the locations of any files you want to scan for class names.
                 paths: glob.sync([
                     path.join(__dirname, "resources/views/**/*.blade.php"),
