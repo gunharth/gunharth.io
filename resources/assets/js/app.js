@@ -4,7 +4,7 @@ import Highlight from './modules/highlight';
     Highlight.start();
 // });
 
-/* begin begin Back to Top button  */
+/* begin begin Back to Top button */
 (function () {
     'use strict';
 
