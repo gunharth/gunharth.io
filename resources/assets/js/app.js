@@ -27,9 +27,11 @@ import Highlight from './modules/highlight';
         }
     }
 
-    var goTopBtn = document.querySelector('.back_to_top');
+    if (document.querySelector('.back_to_top')) {
+        var goTopBtn = document.querySelector('.back_to_top');
 
-    window.addEventListener('scroll', trackScroll);
-    goTopBtn.addEventListener('click', backToTop);
+        window.addEventListener('scroll', trackScroll);
+        goTopBtn.addEventListener('click', backToTop);
+    }
 })();
 /* end begin Back to Top button  */
