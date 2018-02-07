@@ -84,7 +84,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 __WEBPACK_IMPORTED_MODULE_0__modules_highlight__["a" /* default */].start();
 // });
 
-/* begin begin Back to Top button  */
+/* begin begin Back to Top button */
 (function () {
     'use strict';
 
