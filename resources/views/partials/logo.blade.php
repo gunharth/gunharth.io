@@ -1,3 +1,3 @@
 <a href="{{ route('home') }}">
-    <img src="/images/gr_logo.jpg" width="50">
+    <img src="/images/gr_logo.jpg" class="w-16">
 </a>

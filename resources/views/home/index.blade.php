@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts.master')
 
 @section('meta')
     <meta property="og:url"                content="https://christoph-rumpel.com" />
