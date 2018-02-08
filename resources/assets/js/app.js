@@ -1,13 +1,16 @@
 import Highlight from './modules/highlight';
+import Turbolinks from 'turbolinks';
+
+Turbolinks.start();
+
+
+
 
 document.addEventListener('turbolinks:load', () => {
+
     Highlight.start();
-});
 
-/* begin begin Back to Top button */
-(function () {
-    'use strict';
-
+    /* begin begin Back to Top button */
     function trackScroll() {
         var scrolled = window.pageYOffset;
         var coords = document.documentElement.clientHeight;
@@ -33,5 +36,6 @@ document.addEventListener('turbolinks:load', () => {
         window.addEventListener('scroll', trackScroll);
         goTopBtn.addEventListener('click', backToTop);
     }
-})();
-/* end begin Back to Top button  */
+    /* end begin Back to Top button  */
+
+});
