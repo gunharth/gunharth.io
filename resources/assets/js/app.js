@@ -1,8 +1,11 @@
 import Highlight from './modules/highlight';
 import Turbolinks from 'turbolinks';
 
+<<<<<<< HEAD
 Turbolinks.start();
 
+=======
+>>>>>>> master
 document.addEventListener('turbolinks:load', () => {
     Highlight.start();
 });
