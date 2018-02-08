@@ -1,8 +1,8 @@
 import Highlight from './modules/highlight';
 
-// document.addEventListener('turbolinks:load', () => {
+document.addEventListener('turbolinks:load', () => {
     Highlight.start();
-// });
+});
 
 /* begin begin Back to Top button */
 (function () {

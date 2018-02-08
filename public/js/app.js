@@ -80,9 +80,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modules_highlight__ = __webpack_require__(2);
 
 
-// document.addEventListener('turbolinks:load', () => {
-__WEBPACK_IMPORTED_MODULE_0__modules_highlight__["a" /* default */].start();
-// });
+document.addEventListener('turbolinks:load', function () {
+    __WEBPACK_IMPORTED_MODULE_0__modules_highlight__["a" /* default */].start();
+});
 
 /* begin begin Back to Top button */
 (function () {
