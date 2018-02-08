@@ -1,6 +1,10 @@
-@component('layouts.master', [
-    'title' => 'Blog',
-])
+@extends('layouts.master')
+
+@section('meta')
+
+@endsection
+
+@section('content')
     <div class="container">
         <header class="blog__header">
             <section class="blog__header__h1">
@@ -52,4 +56,4 @@
         @include('posts.partials.paginator')
         @include('partials.footer')
     </div>
-@endcomponent
+@endsection
