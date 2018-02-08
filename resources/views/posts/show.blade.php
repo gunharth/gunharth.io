@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master', ['title' => $post->title])
 
 @section('meta')
     <meta property="og:url" content="{{$post->url}}"/>
@@ -8,7 +8,7 @@
     <meta property="og:image" content="{{ $post->preview_image }}"/>
 
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@christophrumpel" />
+    <meta name="twitter:site" content="@gunharth" />
     <meta name="twitter:title" content="{{ $post->title }}" />
     <meta name="twitter:description" content="{{ strip_tags($post->summary) }}" />
     <meta name="twitter:image" content="{{ $post->preview_image }}" />
@@ -16,8 +16,7 @@
 
 @section('content')
     <article class="mt-8 mb-8">
-        <time class="mb-2 text-grey-darkest font-bold uppercase text-med">{{ $post->dateShort }} | <span
-                    class="text-orange">Cat</span>
+        <time class="mb-2 text-grey-darkest font-bold uppercase text-med">{{ $post->dateShort }} | <span class="text-orange">{{ $post->category }}</span>
         </time>
         <h1 class="mt-2 mb-8 text-grey-darkest text-4xl">{{ $post->title }}</h1>
 

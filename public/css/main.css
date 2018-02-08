@@ -664,6 +664,13 @@ a {
   color: #6cb2eb;
 }
 
+h2 a {
+  color: #3d4852;
+  margin-top: 3em;
+  margin-bottom: 1.5rem;
+  font-family: Montserrat, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
 /*
 Atom One Dark by Daniel Gamage
 Original One Dark Syntax theme from https://github.com/atom/one-dark-syntax
@@ -797,6 +804,10 @@ p code {
   color: #38c172;
   padding-right: .25rem;
   padding-left: .25rem;
+}
+
+p.blogsummary {
+  padding: 0;
 }
 
 .blognote {

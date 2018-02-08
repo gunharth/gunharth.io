@@ -16,7 +16,7 @@ class PostsController
     public function page($page, Posts $posts)
     {
         return view('posts.index', [
-            'paginator' => $posts->paginate(20, 'page', $page),
+            'paginator' => $posts->paginate(1, 'page', $page),
         ]);
     }
 
