@@ -27,7 +27,7 @@ mix.copyDirectory('content/music-articles/img', 'public/img') // copy music arti
       postCss: [ tailwindcss('tailwind.js') ],
    })
     .browserSync({
-        proxy: 'http://markdown-blog.test',
+        proxy: 'http://gunharth.io.test',
         files: [
             'app/**/*.php',
             'resources/views/**/*.php',
@@ -37,10 +37,6 @@ mix.copyDirectory('content/music-articles/img', 'public/img') // copy music arti
         ]
     })
 
-if (mix.inProduction()) {
-    mix.version();
-}
-
 mix.webpackConfig({
     plugins: [
         new CleanWebpackPlugin(['./public/img', './public/audio', './public/pdf'])
@@ -48,6 +44,7 @@ mix.webpackConfig({
 });
 
 if (mix.inProduction()) {
+    mix.version();
     mix.webpackConfig({
         plugins: [
             new PurgecssPlugin({
