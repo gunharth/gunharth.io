@@ -1,8 +1,11 @@
 import Highlight from './modules/highlight';
+import Turbolinks from 'turbolinks';
 
-// document.addEventListener('turbolinks:load', () => {
+Turbolinks.start();
+
+document.addEventListener('turbolinks:load', () => {
     Highlight.start();
-// });
+});
 
 /* begin begin Back to Top button */
 (function () {
