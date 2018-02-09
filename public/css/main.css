@@ -3670,6 +3670,14 @@ ul.articles li {
  * @import "utilities/skew-transforms";
  */
 
+path {
+  fill: #dae1e7;
+}
+
+svg {
+  width: 20px;
+}
+
 @media (min-width: 576px) {
   .sm\:blogimage {
     margin-left: auto;
