@@ -13,7 +13,7 @@ class HomeController
         //     return $post->date->format('Y');
         // });
 
-        $posts = $posts->all();
+        $posts = $posts->published();
 
         return view('home.index', [
             'posts' => $posts,

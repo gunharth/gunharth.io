@@ -5,55 +5,21 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <header class="blog__header">
-            <section class="blog__header__h1">
-                <h1 class="h1">
-                    Blog
-                </h1>
-            </section>
-            <ul class="blog__header__nav">
-                <li class="blog__header__nav__item">
-                    <a href="{{ url('blogroll') }}">
-                        <span class="icon -s" title="Blogroll">
-                            {{ svg('star') }}
-                        </span>
-                    </a>
-                </li>
-                <li class="blog__header__nav__item">
-                    <a href="{{ url('feed') }}" data-turbolinks="false">
-                        <span class="icon -s" title="RSS">
-                            {{ svg('rss') }}
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </header>
-    </div>
-    <div class="container -pull-out">
+    <ul class="flex flex-col p-0 mt-0 mb-0 sm:justify-center w-full white flex-grow">
         @foreach($paginator as $post)
-            <article class="blog__excerpt">
-                <a href="{{ $post->url }}" class="blog__excerpt__date">
-                    <time datetime="{{ $post->date->format('Y-m-d') }}">
-                        {{ $post->date->format('F jS, Y') }}
-                    </time>
-                </a>
-                <h2 class="blog__excerpt__title">
-                    <a href="{{ $post->url }}" class="blog__excerpt__title__link">
-                        {{ $post->title }}
-                    </a>
+            <li class="mb-6 w-full list-reset">
+                <time class="mb-0 text-grey-darkest font-bold uppercase text-sm font-sans">{{ $post->dateShort }} |
+                    <span class="text-orange">{{ $post->category }}</span>
+                </time>
+                <h2 class="mt-0 mb-2 text-grey-darkest text-lg lg:text-xl">
+                    <a class="no-underline" href="{{ $post->url }}">{{ $post->title }}</a>
                 </h2>
-                <section class="post-contents">
-                    {!! $post->summary !!}
-                </section>
-                <a href="{{ $post->read_more_url }}" target="sebdd" class="blog__excerpt__readmore">
-                    {{ $post->read_more_text ?? 'Read more' }}
-                </a>
-            </article>
+                <p class="blogsummary hidden  text-base md:block">{!! $post->summary_short !!}</p>
+                <a class="text-blue-light text-sm" href="{{ $post->url }}">Read more</a>
+            </li>
         @endforeach
-    </div>
-    <div class="container">
-        @include('posts.partials.paginator')
-        @include('partials.footer')
-    </div>
+    </ul>
+
+    {!! $paginator->render() !!}
+
 @endsection

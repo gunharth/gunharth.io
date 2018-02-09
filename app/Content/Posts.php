@@ -2,6 +2,7 @@
 
 namespace App\Content;
 
+use App;
 use Carbon\Carbon;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
@@ -16,6 +17,17 @@ class Posts extends Provider
             $date = Carbon::parse($post->date);
             $post->dateShort = $date->format('F Y');
         });
+    }
+
+    public function published()
+    {
+        if (App::environment('production')) {
+            return $this->all()
+                ->filter(function ($post) {
+                    return $post->published;
+                });
+        }
+        return $this->all();
     }
 
     public function paginate($perPage = 15, $pageName = 'page', $page = null)
@@ -93,6 +105,7 @@ class Posts extends Provider
                     'summary' => markdown($document->summary ?? $document->body()),
                     'summary_short' => mb_strimwidth($document->summary ?? $document->body(), 0, 140, "..."),
                     'preview_image' => $document->preview_image ? '/' . $document->preview_image : '/images/gr_logo.jpg',
+                    'published' => $document->published ?? true,
                 ];
             })
             ->sortByDesc('date');
