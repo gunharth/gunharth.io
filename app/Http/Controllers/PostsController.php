@@ -9,7 +9,7 @@ class PostsController
     public function index(Posts $posts)
     {
         return view('posts.index', [
-            'paginator' => $posts->paginate(20),
+            'paginator' => $posts->published()->simplePaginate(10)
         ]);
     }
 
