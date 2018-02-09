@@ -57,3 +57,21 @@ For production run
 ````
 npm run production
 ````
+
+
+# Deploy on Forge
+
+On Forge I'm using the quick deploy feature on the production branch. Development happens on the master branch.
+
+The forge deploy script:
+```
+cd /home/forge/ping.gunharth.io
+git pull origin production
+git submodule update --init --remote
+composer install --no-interaction --prefer-dist --optimize-autoloader
+php artisan cache:clear
+php artisan responsecache:flush
+php artisan config:cache
+php artisan route:cache
+echo "" | sudo -S service php7.2-fpm reload
+```
