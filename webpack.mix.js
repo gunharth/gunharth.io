@@ -4,7 +4,7 @@ const glob = require("glob-all");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-const purgecssWhitelist = ['back_to_top-show'];
+const purgecssWhitelist = ['back_to_top-show','code', 'pre'];
 const purgecssWhitelistPatterns = [/hljs/];
 
 // Custom PurgeCSS extractor for Tailwind that allows special characters in
