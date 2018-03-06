@@ -12,7 +12,7 @@
         @foreach($articles as $category => $articles)
             <h2>{{ $category }}</h2>
 
-            <ul class="articles">
+            <ul class="list-reset articles">
                 @foreach($articles as $article)
                     <li><a href="{{ $article->url }}" class="">{{ $article->title }}</a></li>
                 @endforeach

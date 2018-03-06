@@ -21,7 +21,11 @@ pre {
 }
 
 a {
-    @apply text-blue-light;
+    @apply text-grey-dark no-underline;
+
+    &:hover {
+        @apply underline;
+    }
 }
 
 h2 a {
