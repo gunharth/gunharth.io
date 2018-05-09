@@ -13,10 +13,8 @@
             <h2>{{ $category }}</h2>
 
             <ul class="list-reset articles">
-                @foreach($articles as $article)
-                    <li><a href="{{ $article->url }}" class="">{{ $article->title }}</a></li>
-                @endforeach
-            </ul>
+                @foreach($articles as $article)                    <li><a href="{{ $article->url }}" class="">{{ $article->title }}</a></li>
+                @endforeach           </ul>
         @endforeach
     </div>
 
